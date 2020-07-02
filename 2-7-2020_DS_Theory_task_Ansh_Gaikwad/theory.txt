@@ -1,0 +1,5 @@
+Q1) Why do we need data types in C?
+ => Each variable in C has an assosciated data type. They are needed in a program to store different types of information. It can be of integer, char, double, etc. Each data type requires different amounts of memory which can be found by the function sizeof(). Also, each data type can perform different types of operations such as summation, subtraction, concatenation, etc. And this is we need data types in C so that we can differentiate and segregate data in the best possible way.
+
+Q2) Why was the structure program not working as expected?
+ => As soham was inserting a blank space in the input of scanf() and as we know that after a blank space scanf() doesn't read anything. So replacing it with puts/gets will work fine. Also we must clear the output buffer of the stream with fflush(stdin), so that if the enter character is stored in the buffer will get flushed out. 
