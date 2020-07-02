@@ -2,7 +2,7 @@
 
 ## Regarding Task Submission
 After yesterday's session, we hope you are now comfortable with Git and GitHub. 
-Now you will be given daily tasks on the basis of the topics taught on that particular day. You need to submit those tasks on Github. Your mentors will be providing you with the link of the repository they have created.
+Now you will be given daily tasks on the basis of the topics taught on that particular day. You need to submit those tasks.
 
 ## Steps for submitting the tasks:
 1. Fork the repo
