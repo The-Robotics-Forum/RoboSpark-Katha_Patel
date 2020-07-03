@@ -1,49 +1,66 @@
 #include<stdio.h>
 
-int push(int *stack, int top)
+int push(char element,char *stack,int top)
 {
-    top++;
+    stack[++top]=element;
     return top;
 }
 
-int pop(int *stack, int top)
+int pop(int top)
 {
-    top--;
-    return top;
-}
-
-int main()
-{
-    int stack[100];
-    int top = -1;
-    char x;
-    int count;
-    int count2;
-
-    x = '(';
-
-    while (x == '(' || x == ')')
+    if(top==-1)
     {
-        scanf("%s", &x);
-
-        if (x == '(')
-        {
-           count = push(stack, top);
-        }
-        else
-        {
-            count2 = pop(stack, top);
-        }
-    }
-
-    if (count == count2)
-    {
-        printf("\nBrackets are equal!");
+        printf("\nNot Balanced");
+        exit(0);
     }
     else
     {
-        printf("\nBrackets are unequal");
+    return --top;
+    }
+}
+
+int isEmpty(int top)
+{
+    if(top==-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+
+int main()
+{
+    char stack[8];
+    int top=-1,i=0;
+    
+    printf("Enter the brackets");
+    scanf("%s",stack);
+    
+    while(stack[i]!='\0')
+    {
+        if(stack[i]=='(')
+        {
+            top=push(stack[i],stack,top);
+        }
+        else if(stack[i]==')')
+        {
+            top=pop(top);
+        }
+        i++;
+    }
+        
+    if(isEmpty(top))
+    {
+        printf("Brackets are Balanced : ");
+    }
+    else
+    {
+        printf("Brackets aren't  Balanced :");
     }
     
-    return 0;
+    
 }
