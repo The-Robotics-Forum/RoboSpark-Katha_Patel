@@ -1,0 +1,6 @@
+
+Q . What is need of datatypes in C?
+A . Datatypes are needed to know type of data we work with...Accordingly memeory space needs to be allocated . i.e differernt types of data may require different memory spaces.
+
+Q . Why do we get error in output if we try to use %s to take space as input?
+A . %s format specifier doesn't allow whitespaces as input..Instead we can use gets() function to take space as input.
