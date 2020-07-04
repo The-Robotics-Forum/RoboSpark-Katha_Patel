@@ -2,42 +2,71 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
 struct Student
 {
-    int arr[10];
-    char name;
-    int rollno;
-    int front , rear;
+    int roll;
+    char name[20];
 };
 
-void init(struct Student *ptr)
+struct Queue
 {
-    ptr->front = 0;
-    ptr->rear = 0;
+    int front , rear;
+    int arr[10];
+};
+
+void enqueue(struct Queue *ptr , int rollno)
+{
+    ptr->arr[ptr->rear++] = rollno;
 }
 
-void enqueue(struct Student *q , int data)
+void init(struct Queue *p)
 {
-    q->arr[q->rear++] = data;
+    p->front = p->rear = 0;
 }
 
 int main()
 {
-    struct Student *stud1 = (struct Student *)malloc(sizeof(struct Student));
-    init(stud1);
-    stud1->name = 'A';
-    printf("Enter roll number of student");
-    scanf("%d", &stud1->rollno);
-    if(stud1->rollno % 2 == 0)
+    struct Student *s1 , *s2 , *s3;
+
+    printf("Enter student name and roll number\n");
+    scanf("%s", s1->name);
+    scanf("%d", s1->roll);
+
+    printf("Enter student name and roll number\n");
+    scanf("%s", s2->name);
+    scanf("%d", s2->roll);
+
+    printf("Enter student name and roll number\n");
+    scanf("%s", s3->name);
+    scanf("%d", s3->roll);
+
+
+    struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
+    init(s1);
+    init(s2);
+    init(s3);
+
+
+
+    if(s1->roll%2==0)
     {
-        enqueue(stud1 , stud1->rollno);
-        printf("Student having roll number %d enqueued" , stud1->rollno);
-    }
-    else
-    {
-        printf("cannot enqueue due to odd roll number");
+        enqueue(q , s1->roll);
+        printf("Enqueued");
+        
     }
     
+    if(s2->roll%2==0)
+    {
+        enqueue(q , s2->roll);
+        printf("Enqueued");
+        
+    }
+
+    if(s3->roll%2==0)
+    {
+        enqueue(q , s3->roll);
+        printf("Enqueued");
+        
+    }
 
 }
