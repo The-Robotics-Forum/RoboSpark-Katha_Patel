@@ -46,6 +46,8 @@ int main()
 {
     Student s1 , s2;
     s1.showRank(s2);
+    s1.showRank(s2 , 3);
+    s1.showRank(4);
 
     return 0;
 }
