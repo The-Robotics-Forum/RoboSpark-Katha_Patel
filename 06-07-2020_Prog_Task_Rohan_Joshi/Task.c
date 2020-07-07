@@ -10,6 +10,11 @@ struct node
 
 // these can be done in single function using if statement , but for sake of convenience ... wrote different functions
 
+void print(struct node *toprint)
+{
+    printf("%d -> ", toprint->data);
+}
+
 void add_at_end(struct node *prev , int val)
 {
     if (prev->next == NULL)
@@ -94,11 +99,26 @@ int main()
     fourth -> data = 4;
     fourth -> next = NULL;
 
+    print(head);
+    print(second);
+    print(third);
+    print(fourth);
+
     add_at_end(fifth, 5);
     insert(third, fourth, 8);
     add_at_start(second, 12);
 
+    print(head);
+    print(second);
+    print(third);
+    print(fourth);
+
     del(fourth, fifth);
+
+    print(head);
+    print(second);
+    print(third);
+    print(fourth);
 
 
     return 0;
