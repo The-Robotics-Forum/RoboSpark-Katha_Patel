@@ -2,124 +2,111 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct node
+typedef struct Node
 {
     int data;
-    struct node *next;
-};
+    struct Node *next;
+}node;
 
-// these can be done in single function using if statement , but for sake of convenience ... wrote different functions
 
-void print(struct node *toprint)
+void add_at_start(node *first, int data)
 {
-    printf("%d -> ", toprint->data);
-}
-
-void add_at_end(struct node *prev , int val)
-{
-    if (prev->next == NULL)
-    {
-        struct node *newnode  = (struct node *)malloc(sizeof(struct node));
-        newnode -> data = val;
-        newnode -> next = NULL;
-        prev -> next = newnode;
-    }
-
-    else
-    {
+    if (first->next == NULL)
         return;
-    }
+
+    node *newnode = (node *)malloc(sizeof(node));
+    newnode->data = data;
+    newnode->next = first;
+    printf("%d -> ", newnode->data);
 }
 
-void insert(struct node *prev, struct node *nextnode, int val)
+void insert(node *prevnode, int data)
 {
-    if (prev->next == NULL)
-    {
+    if(prevnode->next==NULL)
         return;
-    }
-    
-    else
+
+    node *newnode = (node *)malloc(sizeof(node));
+    newnode->data = data;
+    newnode->next = prevnode->next;
+    prevnode->next = newnode;
+    printf("%d -> ", newnode->data);
+}
+
+void add_at_end(node *prevnode, int data)
+{
+    if (prevnode->next == NULL)
     {
-        struct node *newnode = (struct node *)malloc(sizeof(struct node));
-        prev->next = newnode;
-        newnode -> data = val;
-        newnode->next = nextnode;
+        node *newnode = (node *)malloc(sizeof(node));
+        newnode->data = data;
+        prevnode->next = newnode;
+        newnode->next = NULL;
     }
     
 }
 
-void add_at_start(struct node *nextnode, int val)
+void del(node *todelete, node *prevnode)
 {
-    struct node *newhead = (struct node *)malloc(sizeof(struct node));
-    newhead->next = nextnode;
-    newhead->data = val;  
-}
-
-void del(struct node *prevnode , struct node *nextnode)
-{
-    if(prevnode->next!=NULL && nextnode->next==NULL)
+    if (todelete->next==NULL)
     {
-        prevnode->next = NULL;
+        prevnode->next==NULL;
+        free(todelete);
     }
-    else if (prevnode->next!=NULL && nextnode->next!=NULL)
+
+    else if(prevnode->next==todelete)
     {
-        prevnode->next = nextnode;
+        prevnode->next = todelete->next;
+        free(todelete);
     }
     else
     {
-        free(prevnode);
+        node *temp = todelete;
+        todelete->next = todelete;
+        free(todelete);
     }
     
 }
+
 
 int main()
 {
-    struct node *head;
-    struct node *second;
-    struct node *third;
-    struct node *fourth;
-    struct node *fifth;
-    struct node *toinsert;
-    struct node *starthere;
+    node *head = (node *)malloc(sizeof(node));
+    node *second = (node *)malloc(sizeof(node));
+    node *third = (node *)malloc(sizeof(node));
+    node *fourth = (node *)malloc(sizeof(node));
 
-    head = (struct node *)malloc(sizeof(struct node));
-    second = (struct node *)malloc(sizeof(struct node));
-    third = (struct node *)malloc(sizeof(struct node));
-    fourth = (struct node *)malloc(sizeof(struct node));
+    head->data = 1;
+    head->next = second;
 
-    head -> data = 1;
-    head -> next = second;
+    second->data = 2;
+    second->next = third;
 
-    second -> data  = 2;
-    second -> next = third;
+    third->data = 3;
+    third->next = fourth;
 
-    third -> data = 3;
-    third -> next = fourth;
+    fourth->data = 4;
+    fourth->next = NULL;
 
-    fourth -> data = 4;
-    fourth -> next = NULL;
+    add_at_start(head , 0);  // added node at begining;
+    printf("%d -> ", head->data);
+    printf("%d -> ", second->data);
+    printf("%d -> ", third->data);
+    printf("%d -> ", fourth->data);
+    printf("\n");
 
-    print(head);
-    print(second);
-    print(third);
-    print(fourth);
 
-    add_at_end(fifth, 5);
-    insert(third, fourth, 8);
-    add_at_start(second, 12);
+    printf("%d -> ", head->data);
+    printf("%d -> ", second->data);
+    printf("%d -> ", third->data);
+    insert(third, 65);              // inserted a node here
+    printf("%d -> ", fourth->data);
+    printf("\n");
 
-    print(head);
-    print(second);
-    print(third);
-    print(fourth);
+    del(third, second);       // deleted a node
 
-    del(fourth, fifth);
-
-    print(head);
-    print(second);
-    print(third);
-    print(fourth);
-
+    printf("%d -> ", head->data);
+    printf("%d -> ", second->data); //not printed third as, now it contains some garbage value
+    printf("%d -> ", fourth->data);
+    printf("\n");
 
     return 0;
 }
