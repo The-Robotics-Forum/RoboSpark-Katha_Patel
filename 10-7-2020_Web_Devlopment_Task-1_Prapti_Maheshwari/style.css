@@ -1,0 +1,27 @@
+img {
+      /* border-radius: 50%;  
+     float: left;  */
+     height: 300px;
+ padding-top: 40px;
+  padding-right: 30px;
+  padding-bottom: 50px; 
+  padding-left: 500px; 
+  }
+ body{
+   background-color: skyblue;
+ }
+
+
+  #project{
+
+    background-color: #3DB2B9;
+  }
+  #education{
+background-color:skyblue;
+  }
+  /* #about_section{
+      /* background-image: linear-gradient(90deg,#34ADFF 20%,#4CBFFF 80%); */
+
+
+
+  
