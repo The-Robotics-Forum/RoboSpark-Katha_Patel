@@ -1,0 +1,55 @@
+ .profile {
+      /* border-radius: 50%;  
+     float: left;  */
+     height: 300px;
+ padding-top: 40px;
+  padding-right: 30px;
+  padding-bottom: 50px; 
+  padding-left: 500px; 
+  }
+ body{
+   background-color: #49E5EF;
+ }
+
+
+   #project{
+
+    background-color: #49E5EF
+  } 
+  #education{
+background-color:#49E5EF;
+  }
+  .footer{
+    background-color: #3E5759;
+    width: 100%;
+  }
+  .container{
+    background-color: #49E5EF;
+  }
+  .fas fa-book{
+    background-color: #49E5EF;
+  }
+  .row{
+    background-color: #49E5EF;
+  }
+
+
+  #social-fb:hover {
+    color: #3B5998;
+}
+#social-tw:hover {
+    color: #4099FF;
+}
+#social-in:hover {
+    color: #d34836;
+}
+#social-em:hover {
+    color: #f39c12;
+}
+  
+  /* #about_section{
+      /* background-image: linear-gradient(90deg,#34ADFF 20%,#4CBFFF 80%); */
+
+
+
+  
