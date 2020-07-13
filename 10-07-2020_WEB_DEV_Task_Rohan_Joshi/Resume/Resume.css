@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0, 0, 0, 0.5)), url(ckt.jpg);
+    background-size: cover;
+    align-self: center;
+}
+
+div{
+    color: white;
+}
+
+.about{
+    text-align: center;
+    
+}
+
+.image{
+    margin: 20px;
+    margin-left: 30px;
+}
+
+.lang{
+    margin-left: 20px;
+}
+
+.pr{
+    float: right;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+a{
+    color: white;
+}
