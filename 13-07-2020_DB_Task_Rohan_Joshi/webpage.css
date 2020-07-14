@@ -1,0 +1,36 @@
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("study.jpg");
+}
+
+#input-box{
+    border: none;
+    background: none;
+    border-bottom: orangered solid;
+    margin: 5px;
+    padding: 5px;
+    color: greenyellow;
+    font-size: 15px;
+}
+
+.inp-box{
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    
+}
+
+.button{
+    position: absolute;
+    padding: 12px;
+    margin-left: 70px;
+    background: none;
+    border: none;
+}
+
+::placeholder{
+    color: gold;
+}
